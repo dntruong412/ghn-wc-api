@@ -27,7 +27,7 @@ class GHNProxyPassController extends Controller
             "Token: " . $token
         ];
         if (!empty($request->header('ShopId'))) {
-            $requestHeaders['ShopId'] = $request->header('ShopId');
+            $requestHeaders[] = 'ShopId: ' . $request->header('ShopId');
         }
 
         $curlParams = [
